@@ -78,6 +78,9 @@ function preload() {
 }
 
 function setup() {
+  SCR_WIDTH = windowWidth;
+  SCR_HEIGHT = windowHeight;
+  
   createCanvas(SCR_WIDTH, SCR_HEIGHT);
   
   frameRate(30);
@@ -87,6 +90,12 @@ function setup() {
   KID_RIP_SPRITE = new newSprite('Kid-Rip', 1)
   
   startLevel(0);
+}
+
+function windowResized() {
+  SCR_WIDTH = windowWidth;
+  SCR_HEIGHT = windowHeight;
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
